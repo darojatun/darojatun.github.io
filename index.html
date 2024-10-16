@@ -1,1 +1,216 @@
-test 2024
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+}
+
+.landpg {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    65deg,
+    #000000,
+    #0f2019,
+    #01eeff,
+    #000000,
+    #01eeff,
+    #0f2019,
+    #000000
+  );
+  color: rgb(255, 255, 255);
+  position: relative;
+  background-image: conic-gradient(
+      from var(--border-angle),
+      #213,
+      #112 50%,
+      #213
+    ),
+    conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+  background-size: calc(100% - (var(--border-size) * 2))
+      calc(100% - (var(--border-size) * 2)),
+    cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  animation: bg-spin 3s linear infinite;
+}
+
+.box {
+  --border-size: 10px;
+  --border-angle: 0turn;
+  width: 800px;
+  height: 180px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10%;
+  background-image: conic-gradient(
+      from var(--border-angle),
+      #213,
+      #112 50%,
+      #213
+    ),
+    conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+  background-size: calc(100% - (var(--border-size) * 2))
+      calc(100% - (var(--border-size) * 2)),
+    cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  animation: bg-spin 3s linear infinite;
+}
+
+@keyframes bg-spin {
+  to {
+    --border-angle: 1turn;
+  }
+}
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+.digitalclock {
+  width: 100%;
+  height: 100%;
+  background: rgba(235, 0, 225, 0.11);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(40px);
+}
+
+.digitalclock span {
+  font-size: 80px;
+  width: 100px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+}
+
+.digitalclock span::after {
+  font-size: 16px;
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+#hrs::after {
+  content: "Jam";
+}
+
+#min::after {
+  content: "Menit";
+}
+
+#sec::after {
+  content: "Detik";
+}
+
+.h1 {
+  font-size: 30px;
+  bottom: 5px;
+  align-self: center;
+}
+
+.container {
+  margin-top: 4px;
+  width: 100%;
+  height: 50%;
+  background: rgba(235, 0, 225, 0.11);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(40px);
+}
+
+.container h1 {
+  transform: scale(1);
+  transition: transform 0.2s ease-in;
+}
+.container h1:hover {
+  transform: scale(1.2);
+}
+
+</style>
+<script>
+let hrs = document.getElementById("hrs");
+let min = document.getElementById("min");
+let sec = document.getElementById("sec");
+
+setInterval(() => {
+  let currentTime = new Date();
+
+  hrs.innerHTML = currentTime.getHours();
+  min.innerHTML = currentTime.getMinutes();
+  sec.innerHTML = currentTime.getSeconds();
+  let monthName = [
+    "Januari",
+    "Februari",
+    "Maret",
+    "April",
+    "Mei",
+    "Juni",
+    "Juli",
+    "Agustus",
+    "September",
+    "Oktober",
+    "November",
+    "Desember"
+  ];
+  let dayName = [
+    "Ahad,",
+    "Senin,",
+    "Selasa,",
+    "Rabu,",
+    "Kamis,",
+    "Jum'at,",
+    "Sabtu,"
+  ];
+  document.getElementById("dateee").innerHTML =
+    dayName[currentTime.getDay()] +
+    " " +
+    currentTime.getDate() +
+    " " +
+    monthName[currentTime.getMonth()] +
+    " " +
+    currentTime.getFullYear();
+});
+
+</script>
+</head>
+<body>
+
+  <div class="landpg">
+    <div class="box">
+      <div class="digitalclock">
+        <span id="hrs">00</span>
+        <span>:</span>
+        <span id="min">00</span>
+        <span>:</span>
+        <span id="sec">00</span>
+
+      </div>
+      <div class="container">
+        <h1 id="dateee">Selasa, 27 Mei 1980</h1>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
