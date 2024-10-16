@@ -147,8 +147,27 @@
 }
 
 </style>
-<script>
-let hrs = document.getElementById("hrs");
+</head>
+<body>
+
+  <div class="landpg">
+    <div class="box">
+      <div class="digitalclock">
+        <span id="hrs">00</span>
+        <span>:</span>
+        <span id="min">00</span>
+        <span>:</span>
+        <span id="sec">00</span>
+
+      </div>
+      <div class="container">
+        <h1 id="dateee">Selasa, 27 Mei 1980</h1>
+      </div>
+
+    </div>
+  </div>
+
+<script>let hrs = document.getElementById("hrs");
 let min = document.getElementById("min");
 let sec = document.getElementById("sec");
 
@@ -192,25 +211,5 @@ setInterval(() => {
 });
 
 </script>
-</head>
-<body>
-
-  <div class="landpg">
-    <div class="box">
-      <div class="digitalclock">
-        <span id="hrs">00</span>
-        <span>:</span>
-        <span id="min">00</span>
-        <span>:</span>
-        <span id="sec">00</span>
-
-      </div>
-      <div class="container">
-        <h1 id="dateee">Selasa, 27 Mei 1980</h1>
-      </div>
-
-    </div>
-  </div>
-
 </body>
 </html>
