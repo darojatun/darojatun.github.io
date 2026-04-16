@@ -10,6 +10,14 @@ if (window.location.href.split("?gen=")[1]) {
 		document.getElementById("text").value = window.location.href;
 		makeCode();
 	}
+// Get the value of the 'h1' parameter from the URL
+const urlParams = new URLSearchParams(window.location.search);
+const h1Value = urlParams.get('h1');
+
+	// Set the text of the element with id "title"
+	if (h1Value) {
+  	document.getElementById('title').textContent = h1Value;
+	}   
 }
 
 var qrcode = new QRCode(document.getElementById("qrcode"), {
