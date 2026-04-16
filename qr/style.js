@@ -1,7 +1,5 @@
 
 function qrUrl() {
-// Get the value of the 'h1' parameter from the URL
-	document.getElementById("text").value = window.location.href;
 	if (window.location.href.split("gen=")[1]) {
 		var url = decodeURI(window.location.href.split("gen=")[1]);
 
@@ -11,6 +9,7 @@ function qrUrl() {
 		document.getElementById("text").value = window.location.href;
 		makeCode();
 	}
+	// Get the value of the 'h1' parameter from the URL
 	const urlParams = new URLSearchParams(window.location.search);
 	const h1Value = urlParams.get('h1');
 
