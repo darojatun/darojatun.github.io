@@ -10,7 +10,7 @@ function qrUrl() {
 	}   
 	document.getElementById("text").value = window.location.href;
 	if (window.location.href.split("gen=")[1]) {
-		var url = decodeURI(window.location.href.split("?gen=")[1]);
+		var url = decodeURI(window.location.href.split("gen=")[1]);
 
 		document.getElementById("text").value = url;
 		makeCode();
