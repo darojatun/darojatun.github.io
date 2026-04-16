@@ -17,6 +17,7 @@ function qrUrl() {
 }
 
 
+
 var qrcode = new QRCode(document.getElementById("qrcode"), {
 	width : 240,
 	height : 240
