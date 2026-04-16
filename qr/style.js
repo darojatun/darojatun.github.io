@@ -1,23 +1,23 @@
 
 function qrUrl() {
-document.getElementById("text").value = window.location.href;
-if (window.location.href.split("?gen=")[1]) {
-	var url = decodeURI(window.location.href.split("?gen=")[1]);
+// Get the value of the 'h1' parameter from the URL
+	const urlParams = new URLSearchParams(window.location.search);
+	const h1Value = urlParams.get('h1');
 
-	document.getElementById("text").value = url;
-	makeCode();
+	// Set the text of the element with id "title"
+	if (h1Value) {
+  		document.getElementById('title').textContent = h1Value;
+	}   
+	document.getElementById("text").value = window.location.href;
+	if (window.location.href.split("?gen=")[1]) {
+		var url = decodeURI(window.location.href.split("?gen=")[1]);
+
+		document.getElementById("text").value = url;
+		makeCode();
 	} else {
 		document.getElementById("text").value = window.location.href;
 		makeCode();
 	}
-// Get the value of the 'h1' parameter from the URL
-const urlParams = new URLSearchParams(window.location.search);
-const h1Value = urlParams.get('h1');
-
-	// Set the text of the element with id "title"
-	if (h1Value) {
-  	document.getElementById('title').textContent = h1Value;
-	}   
 }
 
 var qrcode = new QRCode(document.getElementById("qrcode"), {
