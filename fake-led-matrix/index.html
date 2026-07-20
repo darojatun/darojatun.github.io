@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Running Text LED Matrix 64x8</title>
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Running Text LED Matrix 64×8</h1>
+  <div class="board-wrap">
+    <canvas id="led" width="64" height="8"></canvas>
+  </div>
+  <div class="controls">
+    <label for="speedRange">Kecepatan:</label>
+    <input id="speedRange" type="range" min="0" max="2.0" step="0.05" value="0.5">
+    <span id="speedLabel">0.50×</span>
+  </div>
+  <p class="hint">Konten diambil dari <code>running.txt</code>. Update file untuk mengganti teks.</p>
+  <script src="script.js"></script>
+</body>
+</html>
